@@ -1,0 +1,13 @@
+Package: Rview
+Type: Package
+Title: R Package Template
+Version: 0.1.0
+Author: Doga Ister
+Maintainer: Doga Ister <doga.ister@mail.utoronto.ca>
+Description: Rview is a generic interactive metabolic pathway viewer with a hover over 
+             pop-up information window
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests:
+    testthat
