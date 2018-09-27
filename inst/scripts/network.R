@@ -39,7 +39,8 @@ install.packages("networkD3")
 
 # ====  FUNCTIONS  =============================================================
 #Load the data
-links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/data_edges.csv", header=T, as.is=T)
+links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/data/data_edges.csv", header=T, as.is=T)
+nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/data/data_nodes.csv", header=T, as.is=T)
 #see the first few to make sure
 head(nodes)
 head(links)
@@ -73,6 +74,6 @@ nodes.d3 <- cbind(idn=factor(nodes$name, levels=nodes$name), nodes)
 forceNetwork(Links = links.d3, Nodes = nodes.d3, Source="from", Target="to",
              NodeID = "name", Group = "node.type", linkWidth = 1, linkColour = "#afafaf",
              fontSize=12, zoom=T, colourScale = JS(ColourScale), legend=T,
-             opacity = 0.8, charge=-300, arrows = FALSE, bounded = FALSE, opacityNoHover = 1,
+             opacity = 0.8, charge=-300, arrows = FALSE, bounded = FALSE, opacityNoHover = 2,
              width = NULL, height = NULL)
 
