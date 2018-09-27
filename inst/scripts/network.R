@@ -17,11 +17,11 @@
 setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/scripts")
 
 #====  PARAMETERS  ============================================================
-  # Define and explain all parameters. No "magic numbers" in your code below.
+# Define and explain all parameters. No "magic numbers" in your code below.
 
 
 
-  # ====  PACKAGES  ==============================================================
+# ====  PACKAGES  ==============================================================
 # Load all required packages.
 
 install.packages("igraph")
