@@ -1,15 +1,15 @@
-﻿id,name,node.type
-p1,Pi,Protein
-p2,PPi,Protein
-p3,SAM,Protein
-p4,L-Met,Protein
-p5,H2O,Protein
-p6,SAH,Protein
-p7,Ade-Rib,Protein
-p8,LHCYS,Protein
-p9,tetrahydropteroyltri-L-glutamate,Protein
-p10,5-methyltetrahydropteroyltriglutamate-homocysteine,Protein
-p11,ATP,Protein
-p12,reaction1,Reaction
-p13,reaction2,Reaction
-p14,reaction3,Reaction
+﻿id,name,node.type,node.group
+p1,Pi,Protein,1
+p2,PPi,Protein,1
+p3,SAM,Protein,1
+p4,L-Met,Protein,1
+p5,H2O,Protein,1
+p6,SAH,Protein,1
+p7,Ade-Rib,Protein,1
+p8,LHCYS,Protein,1
+p9,tetrahydropteroyltri-L-glutamate,Protein,1
+p10,5-methyltetrahydropteroyltriglutamate-homocysteine,Protein,1
+p11,ATP,Protein,1
+p12,Reaction 1,Reaction,2
+p13,Reaction 2,Reaction,2
+p14,Reaction 3,Reaction,2
