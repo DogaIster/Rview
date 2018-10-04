@@ -14,16 +14,12 @@
 #
 # ==============================================================================
 
+setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/scripts")
+
 #====  PARAMETERS  ============================================================
 # Define and explain all parameters. No "magic numbers" in your code below.
 
-#=== Some important libraries ===#
-library("devtools")
-library(roxygen2)
 
-#==== CREATING THE PACKAGE DIRECTORY ====#
-setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview")
-#create("rview")
 
 # ====  PACKAGES  ==============================================================
 # Load all required packages.
@@ -32,38 +28,28 @@ if (! require(igraph, quietly=TRUE)) {
   install.packages("igraph", repos="http://cran.rstudio.com/")
   library(igraph)
 }
-#it has a cran package, change this
+
 if (! require(networkD3, quietly=TRUE)) {
-  install.packages("netwporkD3", repos="https://CRAN.R-project.org/package=networkD3")
+  install.packages("netwporkD3", repos="https://github.com/igraph/rigraph")
   library(networkD3)
 }
 
-#==== IGRAPH ====#
 install.packages("igraph")
-
-#==== NETWORK D3 ====#
 install.packages("networkD3")
 
-#==== LINTR ====#
-install.packages("lintr")
-
-#==== FUNCTIONS ====#
+# ====  FUNCTIONS  =============================================================
 #Load the data
-#use gdata when you figure it out how it works, also use rname variables
 links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/data/data_edges.csv", header=T, as.is=T)
 nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/data/data_nodes.csv", header=T, as.is=T)
 #see the first few rows to make sure
 #head(nodes)
 #head(links)
-library("igraph")
-library("networkD3")
 
-
-trial <- function(){
-answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive networn and anything else but p and i for sankey networks: ")
-if (answer == "s") {
+question <- prompt("Do you want to draw a plot or an interactive metabolic network?")
+if( question == "Plot"){
   ########### PLOT ###########
   #Create igraph object
+  library("igraph")
   #Using igraph's properties to define lines and nodes
   net <- graph_from_data_frame(d=links, vertices=nodes, directed=T)
   #Get rid off selp loops and duplicates
@@ -77,12 +63,14 @@ if (answer == "s") {
   V(net)$color <- mycolours[V(net)$node.group]
   #draw a simple non-interactive plot to check the value
   plot(net, edge.arrow.size=.4, edge.curved=.4, vertex.label=NA, vertex.frame.color="#ffffff") #don't forget to get the labels back
-  } else if (answer == "i") {
+} else{
 
 ########### Interactive ###########
 #load R API of D3
+library("networkD3")
 #D3 needs numeric values in order to work and it starts from 0 not 1 so subtract 1
 links.d3 <- data.frame(from = match(links$from, nodes$id) - 1, to = match(links$to, nodes$id) - 1, value = 1)
+
 
 #node colors
 ColourScale <- 'd3.scaleOrdinal().range(["steelblue","orange"]);'
@@ -92,15 +80,7 @@ nodes.d3 <- cbind(idn=factor(nodes$name, levels=nodes$name), nodes)
 myClick <- ' d3.select(this).select("circle").transition()
 .style("fill", "red");'
 
-#' A D3 Function
-#'
-#' This allows you to create the interactive network by using D3 library
-#' @param love Do you love cats? Defaults to TRUE.
-#' @keywords Links Nodes Source Target Value NodeID Group
-#' @export
-#' @examples
-#' forceNetwork()
-
+#D3 property
 forceNetwork(Links = links.d3,
              Nodes = nodes.d3,
              Source="from",
@@ -121,11 +101,5 @@ forceNetwork(Links = links.d3,
              width = NULL,
              height = NULL,
              clickAction = myClick)
-} else{
-sankeyNetwork(Links = links.d3, Nodes = nodes.d3, Source = "from", Target = "to",
-              NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)")
 }
-}
-trial()
-
 
