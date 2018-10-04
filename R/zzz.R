@@ -28,7 +28,7 @@
 .onAttach <- function(libname, pkgname) {
   # Startup message
   m <- character()
-  m[1] <- "\nWelcome to Rview.\n"
+  m[1] <- "\nWelcome to rview.\n"
 
   packageStartupMessage(paste(m, collapse=""))
 }
