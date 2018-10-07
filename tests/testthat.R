@@ -1,6 +1,6 @@
 library(testthat)
-library(Rview)
+library(rview)
 
-test_check("Rview")
+test_check("rview")
 
 # [END]

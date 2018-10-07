@@ -40,10 +40,23 @@ if (! require(testthat, quietly=TRUE)) {
 }
 
 #==== FUNCTIONS ====#
-#Load the data
-#use gdata when you figure it out how it works, also use rname variables
-links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/data/data_edges.csv", header=T, as.is=T)
-nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/data/data_nodes.csv", header=T, as.is=T)
+#' Load data
+#'
+#' This function reads data from the csv files for nodes and links
+#' @param data_load A function
+#' @keywords data csv
+#' @export
+#' @examples
+#'
+data_load <- function(){
+  links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv", header=T, as.is=T)
+  nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv", header=T, as.is=T)
+  print("Data Loaded")
+  return(list(links=links, nodes=nodes))
+}
+data=data_load()
+links=data$links
+nodes=data$nodes
 
 #==== PLOT ====#
 #Using igraph's properties to define lines and nodes
@@ -56,28 +69,45 @@ net
 mycolours <- c("steelblue", "orange")
 #color them according to their type
 V(net)$color <- mycolours[V(net)$node.group]
-
-
+print("Plot setups are ready")
 #==== INTERACTIVE NETWORK ====#
-#load R API of D3
-#D3 needs numeric values in order to work and it starts from 0 not 1 so subtract 1
-links.d3 <- data.frame(from = match(links$from, nodes$id) - 1, to = match(links$to, nodes$id) - 1, value = 1)
-#node colors
-ColourScale <- 'd3.scaleOrdinal().range(["steelblue","orange"]);'
-#Make the order same as source file
-nodes.d3 <- cbind(idn=factor(nodes$name, levels=nodes$name), nodes)
-#Click action can color the selected node to another color
-myClick <- ' d3.select(this).select("circle").transition()
-.style("fill", "red");'
+  #load R API of D3
 
-#' A D3 Function
+#' data_interactive Function
 #'
-#' This function lets user decide what to draw
-#' @param graphs
+#' This function sets the required D3 variables for the interactive network view
+#' @param data_interactive A function
+#' @keywords interactive network D3 networkD3
+#' @export
+#' @examples
+#'
+data_interactive <- function(){
+  #D3 needs numeric values in order to work and it starts from 0 not 1 so subtract 1
+  links.d3 <- data.frame(from = match(links$from, nodes$id) - 1, to = match(links$to, nodes$id) - 1, value = 1)
+  #node colors
+  ColourScale <- 'd3.scaleOrdinal().range(["steelblue","orange"]);'
+  #Make the order same as source file
+  nodes.d3 <- cbind(idn=factor(nodes$name, levels=nodes$name), nodes)
+  #Click action can color the selected node to another color
+  myClick <- ' d3.select(this).select("circle").transition()
+  .style("fill", "red");'
+  print("Interactive network setups are ready")
+  return(list(links.d3=links.d3, nodes.d3=nodes.d3, ColourScale=ColourScale, myClick=myClick))
+}
+data_int=data_interactive()
+links.d3=data_int$links.d3
+nodes.d3=data_int$nodes.d3
+ColourScale=data_int$ColourScale
+myClick=data_int$myClick
+
+#' Trial Function
+#'
+#' This function lets user decide what to draw (plot, interactive networks, sankey network)
+#' @param trial Is a function
 #' @keywords plot interactive sankey network
 #' @export
 #' @examples
-
+#'
 
 trial <- function(){
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
