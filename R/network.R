@@ -70,9 +70,8 @@ mycolours <- c("steelblue", "orange")
 #color them according to their type
 V(net)$color <- mycolours[V(net)$node.group]
 print("Plot setups are ready")
-#==== INTERACTIVE NETWORK ====#
-  #load R API of D3
 
+#==== INTERACTIVE NETWORK ====#
 #' data_interactive Function
 #'
 #' This function sets the required D3 variables for the interactive network view
