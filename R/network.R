@@ -140,5 +140,3 @@ trial <- function(){
   }
 }
 trial()
-
-

@@ -2,5 +2,4 @@
 
 export(data_interactive)
 export(data_load)
-export(lseq)
 export(trial)
