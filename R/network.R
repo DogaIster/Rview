@@ -19,7 +19,7 @@
 
 #=== Libraries that are used ===#
 library("devtools")
-library(roxygen2)
+library("roxygen2")
 library("igraph")
 library("networkD3")
 
@@ -29,28 +29,41 @@ setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview")
 # ====  PACKAGES  ==============================================================
 # Load all required packages if they are not.
 
-if (! require(lintr, quietly=TRUE)) {
-  install.packages("lintr", repos="http://cran.rstudio.com/")
-  library(lintr)
-}
-#it has a cran package, change this
-if (! require(testthat, quietly=TRUE)) {
-  install.packages("testtgat", repos="http://cran.rstudio.com/")
-  library(testthat)
-}
+# if (! require(lintr, quietly=TRUE)) {
+#   install.packages("lintr", repos="http://cran.rstudio.com/")
+#   library(lintr)
+# }
+# #it has a cran package, change this
+# if (! require(testthat, quietly=TRUE)) {
+#   install.packages("testtgat", repos="http://cran.rstudio.com/")
+#   library(testthat)
+# }
 
 #==== FUNCTIONS ====#
 #' Load data
 #'
-#' This function reads data from the csv files for nodes and links
-#' @param data_load A function
-#' @keywords data csv
-#' @export
+#' This function asks user to specify the location of the data \cr
+#' in their local computer and reads the specified CSV formatted data into R
+#'
+#' @param read.csv reads CSV formatted data into R
+#'
+#' @return None
+#'
 #' @examples
+#' data_load() will show you the context of the data files you have specified
+#' if you use it after devtools::load_all(".")
+#' Please answer the questions with their full location like:
+#' "/Users/JaneDoe/Desktop/BCB410/Rview/inst/extdata/data_edges.csv"
+#'
+#' For my use:
+#' /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv
+#' /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv
 #'
 data_load <- function(){
-  links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv", header=T, as.is=T)
-  nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv", header=T, as.is=T)
+  links_data <- readline(prompt= "Please specify the location of the data for links: ")
+  links <- read.csv(links_data, header=T, as.is=T)
+  nodes_data <- readline(prompt= "Please specify the location of the data for nodes: ")
+  nodes <- read.csv(nodes_data, header=T, as.is=T)
   print("Data Loaded")
   return(list(links=links, nodes=nodes))
 }
@@ -58,10 +71,12 @@ data=data_load()
 links=data$links
 nodes=data$nodes
 
+
+
 #==== PLOT ====#
-#Using igraph's properties to define lines and nodes
+#Using igraph's properties to define lines and nodes for the plot
 net <- graph_from_data_frame(d=links, vertices=nodes, directed=T)
-#Get rid off selp loops and duplicates
+#Get rid off self loops and duplicates
 net <- simplify(net, remove.multiple = F, remove.loops = T)
 #See what it became to
 net
@@ -101,17 +116,26 @@ myClick=data_int$myClick
 
 #' Trial Function
 #'
-#' This function lets user decide what to draw (plot, interactive networks, sankey network)
-#' @param trial Is a function
-#' @keywords plot interactive sankey network
+#' This function lets user decide what kind of graph \cr
+#' they want to use, for now it is limited to \cr
+#' plot, interactive networks and sankey network
+#'
+#' @param trial is a function
+#' @param readline reads the user's input
+#' @param prompt prompts the user with a question/warning etc.
+#'
+#' @return the graph
+#'
 #' @export
+#'
 #' @examples
+#' trial()
 #'
 
 trial <- function(){
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
   if (answer == "p") {
-    #draw a simple non-interactive plot to check the value
+    #draw a simple non-interactive plot
     plot(net, edge.arrow.size=.4, edge.curved=.4, vertex.label=NA, vertex.frame.color="#ffffff") #don't forget to get the labels back
   } else if (answer == "i") {
     forceNetwork(Links = links.d3,
@@ -139,4 +163,5 @@ trial <- function(){
                   NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)")
   }
 }
-trial()
+
+# [END]

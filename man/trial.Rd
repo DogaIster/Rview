@@ -14,6 +14,7 @@ This function lets user decide what to draw (plot, interactive networks, sankey 
 }
 \examples{
 
+
 }
 \keyword{interactive}
 \keyword{network}
