@@ -61,17 +61,17 @@ setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview")
 #'
 data_load <- function(){
   links_data <- readline(prompt= "Please specify the location of the data for links: ")
-  if(linked_data == ""){
-      read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv")
+  if(links_data == ""){
+      links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv", header=T, as.is=T)
   } else{
       links <- read.csv(links_data, header=T, as.is=T)
   }
-  
+
   nodes_data <- readline(prompt= "Please specify the location of the data for nodes: ")
   if(nodes_data == ""){
-      read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv")
+      nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv", header=T, as.is=T)
   } else{
-  nodes <- read.csv(nodes_data, header=T, as.is=T)
+      nodes <- read.csv(nodes_data, header=T, as.is=T)
   }
   print("Data Loaded")
   return(list(links=links, nodes=nodes))
