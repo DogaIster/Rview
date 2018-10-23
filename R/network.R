@@ -80,8 +80,6 @@ data=data_load()
 links=data$links
 nodes=data$nodes
 
-
-
 #==== PLOT ====#
 #Using igraph's properties to define lines and nodes for the plot
 net <- graph_from_data_frame(d=links, vertices=nodes, directed=T)
