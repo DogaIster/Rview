@@ -2,6 +2,7 @@
 
 ## Rview for different visualization
 
+
 Some useful keyboard shortcuts for package authoring:
 
 * Build and Reload Package:  `Cmd + Shift + B`
@@ -9,6 +10,5 @@ Some useful keyboard shortcuts for package authoring:
 * Test Package:              `Cmd + Shift + T`
 * Check Package:             `Cmd + Shift + E` or `devtools::check()`
 
----------------------------------------------------------------------------
-
-devtools::install_github("DogaIster/Rview")
+Load the package (outside of this project) with:
+  devtools::install_github("DogaIster/Rview")
