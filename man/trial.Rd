@@ -7,16 +7,21 @@
 trial()
 }
 \arguments{
-\item{trial}{Is a function}
+\item{trial}{is a function}
+
+\item{readline}{reads the user's input}
+
+\item{prompt}{prompts the user with a question/warning etc.}
+}
+\value{
+the graph
 }
 \description{
-This function lets user decide what to draw (plot, interactive networks, sankey network)
+This function lets user decide what kind of graph \cr
+they want to use, for now it is limited to \cr
+plot, interactive networks and sankey network
 }
 \examples{
-
+trial()
 
 }
-\keyword{interactive}
-\keyword{network}
-\keyword{plot}
-\keyword{sankey}

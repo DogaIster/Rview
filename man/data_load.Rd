@@ -7,13 +7,23 @@
 data_load()
 }
 \arguments{
-\item{data_load}{A function}
+\item{read.csv}{reads CSV formatted data into R}
+}
+\value{
+None
 }
 \description{
-This function reads data from the csv files for nodes and links
+This function asks user to specify the location of the data \cr
+in their local computer and reads the specified CSV formatted data into R
 }
 \examples{
+data_load() will show you the context of the data files you have specified
+if you use it after devtools::load_all(".")
+Please answer the questions with their full location like:
+"/Users/JaneDoe/Desktop/BCB410/Rview/inst/extdata/data_edges.csv"
+
+For my use:
+/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv
+/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv
 
 }
-\keyword{csv}
-\keyword{data}

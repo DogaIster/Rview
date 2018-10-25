@@ -14,9 +14,6 @@
 #
 # ==============================================================================
 
-#====  PARAMETERS  ============================================================
-# Define and explain all parameters. No "magic numbers" in your code below.
-
 #=== Libraries that are used ===#
 library("devtools")
 library("roxygen2")
@@ -25,19 +22,6 @@ library("networkD3")
 
 #==== CREATING THE PACKAGE DIRECTORY ====#
 setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview")
-
-# ====  PACKAGES  ==============================================================
-# Load all required packages if they are not.
-
-# if (! require(lintr, quietly=TRUE)) {
-#   install.packages("lintr", repos="http://cran.rstudio.com/")
-#   library(lintr)
-# }
-# #it has a cran package, change this
-# if (! require(testthat, quietly=TRUE)) {
-#   install.packages("testtgat", repos="http://cran.rstudio.com/")
-#   library(testthat)
-# }
 
 #==== FUNCTIONS ====#
 #' Load data
@@ -63,17 +47,19 @@ data_load <- function(){
   links_data <- readline(prompt= "Please specify the location of the data for links: ")
   if(links_data == ""){
       links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv", header=T, as.is=T)
+      print("Example data for edges is loaded")
   } else{
       links <- read.csv(links_data, header=T, as.is=T)
+      print("Your data for edges loaded successfully")
   }
-
   nodes_data <- readline(prompt= "Please specify the location of the data for nodes: ")
   if(nodes_data == ""){
       nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv", header=T, as.is=T)
+      print("Example data for nodes is loaded")
   } else{
       nodes <- read.csv(nodes_data, header=T, as.is=T)
+      print("Your data for nodes loaded successfully")
   }
-  print("Data Loaded")
   return(list(links=links, nodes=nodes))
 }
 data=data_load()
@@ -121,7 +107,7 @@ nodes.d3=data_int$nodes.d3
 ColourScale=data_int$ColourScale
 myClick=data_int$myClick
 
-#' Trial Function
+#' Draw Function
 #'
 #' This function lets user decide what kind of graph \cr
 #' they want to use, for now it is limited to \cr
@@ -136,10 +122,10 @@ myClick=data_int$myClick
 #' @export
 #'
 #' @examples
-#' trial()
+#' draw()
 #'
 
-trial <- function(){
+draw <- function(){
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
   if (answer == "p") {
     #draw a simple non-interactive plot
