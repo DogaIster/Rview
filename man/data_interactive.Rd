@@ -12,9 +12,6 @@ data_interactive()
 \description{
 This function sets the required D3 variables for the interactive network view
 }
-\examples{
-
-}
 \keyword{D3}
 \keyword{interactive}
 \keyword{network}

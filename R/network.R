@@ -1,17 +1,11 @@
 # network.R
 #
-# Purpose:To draw an interactive metabolic network
+# Purpose:To draw a visual representation.
 # Version:1.0
 # Date:September 24th, 2018
 # Author:Doga Ister
 #
-# Input:
-# Output:
-# Dependencies:networkD3
-#
-# ToDo:Create a network using D3.js R library.
-# Notes:
-#
+# Dependencies: igraph, networkD3
 # ==============================================================================
 
 #=== Libraries that are used ===#
@@ -20,51 +14,7 @@ library("roxygen2")
 library("igraph")
 library("networkD3")
 
-#==== CREATING THE PACKAGE DIRECTORY ====#
-setwd("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview")
-
 #==== FUNCTIONS ====#
-#' Load data
-#'
-#' This function asks user to specify the location of the data \cr
-#' in their local computer and reads the specified CSV formatted data into R
-#'
-#' @param read.csv reads CSV formatted data into R
-#'
-#' @return None
-#'
-#' @examples
-#' data_load() will show you the context of the data files you have specified
-#' if you use it after devtools::load_all(".")
-#' Please answer the questions with their full location like:
-#' "/Users/JaneDoe/Desktop/BCB410/Rview/inst/extdata/data_edges.csv"
-#'
-#' For my use:
-#' /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv
-#' /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv
-#'
-data_load <- function(){
-  links_data <- readline(prompt= "Please specify the location of the data for links: ")
-  if(links_data == ""){
-      links <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv", header=T, as.is=T)
-      print("Example data for edges is loaded")
-  } else{
-      links <- read.csv(links_data, header=T, as.is=T)
-      print("Your data for edges loaded successfully")
-  }
-  nodes_data <- readline(prompt= "Please specify the location of the data for nodes: ")
-  if(nodes_data == ""){
-      nodes <- read.csv("/Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv", header=T, as.is=T)
-      print("Example data for nodes is loaded")
-  } else{
-      nodes <- read.csv(nodes_data, header=T, as.is=T)
-      print("Your data for nodes loaded successfully")
-  }
-  return(list(links=links, nodes=nodes))
-}
-data=data_load()
-links=data$links
-nodes=data$nodes
 
 #==== PLOT ====#
 #Using igraph's properties to define lines and nodes for the plot
@@ -85,8 +35,7 @@ print("Plot setups are ready")
 #' This function sets the required D3 variables for the interactive network view
 #' @param data_interactive A function
 #' @keywords interactive network D3 networkD3
-#' @export
-#' @examples
+#'
 #'
 data_interactive <- function(){
   #D3 needs numeric values in order to work and it starts from 0 not 1 so subtract 1
@@ -109,21 +58,11 @@ myClick=data_int$myClick
 
 #' Draw Function
 #'
-#' This function lets user decide what kind of graph \cr
-#' they want to use, for now it is limited to \cr
+#' This function lets user decide what kind of visual representation
+#' they want to use, for now it is limited to
 #' plot, interactive networks and sankey network
-#'
-#' @param trial is a function
-#' @param readline reads the user's input
-#' @param prompt prompts the user with a question/warning etc.
-#'
 #' @return the graph
-#'
 #' @export
-#'
-#' @examples
-#' draw()
-#'
 
 draw <- function(){
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
@@ -151,9 +90,12 @@ draw <- function(){
                  width = NULL,
                  height = NULL,
                  clickAction = myClick)
-  } else{
+  } else if (answer == "s") {
     sankeyNetwork(Links = links.d3, Nodes = nodes.d3, Source = "from", Target = "to",
-                  NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)")
+                  NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)" )
+  } else{
+    print("Please choose a valid option")
+    print("Valid options: 1) i 2) p 3) s")
   }
 }
 
