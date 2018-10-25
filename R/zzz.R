@@ -2,8 +2,10 @@
 #
 # Package startup and unload functions
 
-
-
+#=== Libraries that are used ===#
+library("roxygen2")
+library("igraph")
+library("networkD3")
 
 .onLoad <- function(libname, pkgname) {
 
