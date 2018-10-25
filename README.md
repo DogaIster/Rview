@@ -13,20 +13,24 @@ library(devtools)
 install_github("DogaIster/Rview")
 library(rview)
 
+#You will be welcomed to rview.
+
+data_load()
 #The system will ask you to put the location of your data file for edges, this files should be in .csv
-#If you don't put the location and press enter, example data will be loaded
-#Same question will appear again to ask you the location of your data file for nodes
+#If you don't put the location and press enter, example data will be loaded for edges
+#Same question will be asked again for you to specify the location of your data file for nodes
 #Same process will follow
 
-#After the your data or the example data is loaded, the system will load the plot and interactive
-#network setups and will welcome you
+#After your data or the example data is loaded, the system will load the plot and interactive network setups
 #After this step:
 
 draw()
-#It will ask you what type of visual representation you want to draw. "p" will draw you a plot, "i" will draw you an 
-#interactive network, "s" will draw you a sankey network.
+#You will be asked specift the type of the visual representation you want to see. 
+#"p" will draw you a plot, "i" will draw you an interactive network 
+#and "s" will draw you a sankey network.
+#If you put an invalid input it will warn you to put a valid one.
 
-# If you want to load net data you need to use data_load().
+# If you want to load a new dataset you need to use data_load().
 ````
 
 Some useful keyboard shortcuts for package authoring:
