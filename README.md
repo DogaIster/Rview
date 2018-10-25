@@ -3,7 +3,7 @@
 ## Rview for different visualization
 
 ## Dependencies:
- *CRAN packages: 
+ CRAN packages: 
     igraph
     networkD3
     
@@ -25,6 +25,8 @@ library(rview)
 draw()
 #It will ask you what type of visual representation you want to draw. "p" will draw you a plot, "i" will draw you an 
 #interactive network, "s" will draw you a sankey network.
+
+# If you want to load net data you need to use data_load().
 ````
 
 Some useful keyboard shortcuts for package authoring:
