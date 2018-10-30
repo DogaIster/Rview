@@ -20,7 +20,9 @@ draw <- function(){
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
   if (answer == "p") {
     #draw a simple non-interactive plot
-    plot(net, edge.arrow.size=.4, edge.curved=.4, vertex.label=NA, vertex.frame.color="#ffffff") #don't forget to get the labels back
+    plot(networkPlot, edge.arrow.size=.4, edge.curved=.4, vertex.label=NA, vertex.frame.color="#ffffff")
+  } else if (answer == "p_wl") {
+    plot(networkPlot, vertex.shape="none", vertex.label.font=2, vertex.label.color="black", vertex.label.cex=.7, edge.arrow.size=.3, edge.curved=.4)
   } else if (answer == "i") {
     forceNetwork(Links = links.d3,
                  Nodes = nodes.d3,

@@ -8,19 +8,18 @@
 
 #' plotSet
 #'
-#' This function sets the required variables for plot
+#' This file sets the required variables for plot
 #' @keywords plot representation
 
-plotSet <- function(){
+library(igraph)
   #Using igraph's properties to define lines and nodes for the plot
-  plot <- graph_from_data_frame(d=links, vertices=nodes, directed=T)
+  networkPlot <- graph_from_data_frame(d=links, vertices=nodes, directed=T)
   #Get rid off self loops and duplicates
-  plot <- simplify(plot, remove.multiple = F, remove.loops = T)
+  networkPlot <- simplify(networkPlot, remove.multiple = F, remove.loops = T)
   #make the reactions orange, proteins steelblue
   mycolours <- c("steelblue", "orange")
   #color them according to their type
-  V(plot)$color <- mycolours[V(plot)$node.group]
+  V(networkPlot)$color <- mycolours[V(networkPlot)$node.group]
   print("Plot setups are ready")
-}
 
 # [END]
