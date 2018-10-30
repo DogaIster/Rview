@@ -27,7 +27,7 @@ data_load()
 
 draw()
 #You will be asked specify the type of the visual representation you want to see. 
-#"p" will draw you a plot, "i" will draw you an interactive network 
+#"p" will draw you a plot without labels, "p_wl" will draw you a plot with the labels, "i" will draw you an interactive network 
 #and "s" will draw you a sankey network.
 #If you put an invalid input it will warn you to put a valid one.
 
