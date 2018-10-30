@@ -34,6 +34,16 @@ draw()
 # If you want to load a new dataset you need to use data_load().
 ````
 
+##Data Template:
+Data consist two files; one of them is the data for nodes and the other is the data for edges.
+1) The data for edges should have three columns named as from, to and type. The example data has only hyperlink
+as a type but your data can also have mention in it.
+2) The data for nodes should have four columns named as id, name, node.type and node.group. Name refers to the 
+name that you wanna see in the networks. node.type is as the name implies, should be the type of the node such
+as protein or reaction. Each node.type should have the same number for node.group.
+
+You can see example data under inst > extdata.
+
 Some useful keyboard shortcuts for package authoring:
 
 * Build and Reload Package:  `Cmd + Shift + B`
