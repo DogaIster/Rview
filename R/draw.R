@@ -17,6 +17,7 @@
 #' @export
 
 draw <- function(){
+  print("Available options: p for a plot without labels, p_wl for a plot with labels, i for an interactive network view, s for sankey network view")
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
   if (answer == "p") {
     #draw a simple non-interactive plot
@@ -49,7 +50,7 @@ draw <- function(){
                   NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)" )
   } else{
     print("Please choose a valid option")
-    print("Valid options: 1) i 2) p 3) s")
+    print("Valid options: 1) i 2) s 3) p 4) p_wl")
   }
 }
 
