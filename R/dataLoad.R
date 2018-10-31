@@ -22,11 +22,10 @@
 #' @usage
 #' data_load()
 #' @export
+#'
 
 # /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv
 # /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv
-
-library(igraph)
 
 edgesCSV <- system.file("extdata", "data_edges.csv", package = "rview")
 nodesCSV <- system.file("extdata", "data_nodes.csv", package = "rview")

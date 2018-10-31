@@ -15,8 +15,7 @@
 #' plot, interactive networks and sankey network
 #' @return the graph
 #' @export
-
-library(networkD3)
+#'
 
 draw <- function(){
   print("Available options: p for a plot without labels, p_wl for a plot with labels, i for an interactive network view, s for sankey network view")
