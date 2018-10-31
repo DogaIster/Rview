@@ -16,6 +16,8 @@
 #' @return the graph
 #' @export
 
+library(networkD3)
+
 draw <- function(){
   print("Available options: p for a plot without labels, p_wl for a plot with labels, i for an interactive network view, s for sankey network view")
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
