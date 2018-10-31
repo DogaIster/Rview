@@ -27,12 +27,13 @@
 # /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv
 # /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv
 
-edgesCSV <- system.file("extdata", "data_edges.csv", package = "rview")
-nodesCSV <- system.file("extdata", "data_nodes.csv", package = "rview")
+
 
 data_load <- function(){
+
   links_data <- readline(prompt= "Please specify the location of the data for links: ")
   if(links_data == ""){
+    edgesCSV <- (system.file("extdata", "data_edges.csv", package = "rview"))
     links <- read.csv(edgesCSV, header=T, as.is=T)
     print("Example data for edges is loaded")
   } else{
@@ -40,6 +41,7 @@ data_load <- function(){
   }
   nodes_data <- readline(prompt= "Please specify the location of the data for nodes: ")
   if(nodes_data == ""){
+    nodesCSV <- (system.file("extdata", "data_nodes.csv", package = "rview"))
     nodes <- read.csv(nodesCSV, header=T, as.is=T)
     print("Example data for nodes is loaded")
   } else{

@@ -12,9 +12,6 @@
 #' @param interactiveSet A function
 #' @keywords interactive network D3 networkD3
 
-library(igraph)
-library(networkD3)
-
 interactiveSet <- function(){
   #D3 needs numeric values in order to work and it starts from 0 not 1 so subtract 1
   links.d3 <- data.frame(from = match(links$from, nodes$id) - 1, to = match(links$to, nodes$id) - 1, value = 1)
@@ -28,7 +25,7 @@ interactiveSet <- function(){
   print("Interactive network setups are ready")
   return(list(links.d3=links.d3, nodes.d3=nodes.d3, ColourScale=ColourScale, myClick=myClick))
 }
-intSet=interactiveSet()
+intSet <- interactiveSet()
 links.d3=intSet$links.d3
 nodes.d3=intSet$nodes.d3
 ColourScale=intSet$ColourScale

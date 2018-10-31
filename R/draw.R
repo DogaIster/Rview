@@ -26,6 +26,7 @@ draw <- function(){
   } else if (answer == "p_wl") {
     plot(networkPlot, vertex.shape="none", vertex.label.font=2, vertex.label.color="black", vertex.label.cex=.7, edge.arrow.size=.3, edge.curved=.4)
   } else if (answer == "i") {
+
     forceNetwork(Links = links.d3,
                  Nodes = nodes.d3,
                  Source="from",
