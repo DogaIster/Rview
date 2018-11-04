@@ -34,7 +34,7 @@ draw()
 # If you want to load a new dataset you need to use data_load().
 ````
 
-##Data Template:
+Data Template:
 Data consist two files; one of them is the data for nodes and the other is the data for edges.
 1) The data for edges should have three columns named as from, to and type. The example data has only hyperlink
 as a type but your data can also have mention in it.
@@ -53,3 +53,5 @@ Some useful keyboard shortcuts for package authoring:
 
 Load the package (outside of this project) with: <br>
   devtools::install_github("DogaIster/Rview")
+  
+To see example results: you can click [here](https://drive.google.com/drive/folders/1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ?usp=sharing).  
