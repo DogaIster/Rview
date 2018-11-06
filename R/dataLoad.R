@@ -24,33 +24,23 @@
 #' @export
 #'
 
-# /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_edges.csv
-# /Users/dogaister/Desktop/Courses/Fall_2018/BCB410/Rview/inst/extdata/data_nodes.csv
-
-
-
 data_load <- function(){
+  data<-data_load
+  #data for edges
+  edgesCSV <- (system.file("extdata", "data_edges.csv", package = "rview"))
+  links <- read.csv(edgesCSV, header=T, as.is=T)
+  print("Example data for edges is loaded")
+  #data for nodes
+  nodesCSV <- (system.file("extdata", "data_nodes.csv", package = "rview"))
+  nodes <- read.csv(nodesCSV, header=T, as.is=T)
+  print("Example data for nodes is loaded")
 
-  links_data <- readline(prompt= "Please specify the location of the data for links: ")
-  if(links_data == ""){
-    edgesCSV <- (system.file("extdata", "data_edges.csv", package = "rview"))
-    links <- read.csv(edgesCSV, header=T, as.is=T)
-    print("Example data for edges is loaded")
-  } else{
-    links <- read.csv(links_data, header=T, as.is=T)
-  }
-  nodes_data <- readline(prompt= "Please specify the location of the data for nodes: ")
-  if(nodes_data == ""){
-    nodesCSV <- (system.file("extdata", "data_nodes.csv", package = "rview"))
-    nodes <- read.csv(nodesCSV, header=T, as.is=T)
-    print("Example data for nodes is loaded")
-  } else{
-    nodes <- read.csv(nodes_data, header=T, as.is=T)
-  }
   return(list(links=links, nodes=nodes))
 }
-data=data_load()
-links=data$links
-nodes=data$nodes
+
+data<-data_load()
+links<-data$links
+nodes<-data$nodes
+
 
 # [END]

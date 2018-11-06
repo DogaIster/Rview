@@ -18,15 +18,22 @@
 #'
 
 draw <- function(){
+  #interactive setups should be done to draw an interactive network
+  intSet <- interactiveSet()
+  links.d3 <- intSet$links.d3
+  nodes.d3 <- intSet$nodes.d3
+  ColourScale <- intSet$ColourScale
+  myClick <- intSet$myClick
+
   print("Available options: p for a plot without labels, p_wl for a plot with labels, i for an interactive network view, s for sankey network view")
   answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
   if (answer == "p") {
+    print("Plot setups are ready")
     #draw a simple non-interactive plot
-    plot(networkPlot, edge.arrow.size=.4, edge.curved=.4, vertex.label=NA, vertex.frame.color="#ffffff")
+    plot(networkPlot, edge.arrow.size=.4, edge.curved=.4, vertex.frame.color="#ffffff")
   } else if (answer == "p_wl") {
-    plot(networkPlot, vertex.shape="none", vertex.label.font=2, vertex.label.color="black", vertex.label.cex=.7, edge.arrow.size=.3, edge.curved=.4)
+    plot(networkPlot, vertex.shape="none", vertex.label.font=2, vertex.label.color="black", vertex.label.cex=.8, edge.arrow.size=.3, edge.curved=.2)
   } else if (answer == "i") {
-
     forceNetwork(Links = links.d3,
                  Nodes = nodes.d3,
                  Source="from",

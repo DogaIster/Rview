@@ -20,15 +20,9 @@ interactiveSet <- function(){
   #Make the order same as source file
   nodes.d3 <- cbind(idn=factor(nodes$name, levels=nodes$name), nodes)
   #Click action can color the selected node to another color
-  myClick <- ' d3.select(this).select("circle").transition()
-  .style("fill", "red");'
+  myClick <- ' d3.select(this).select("circle").transition().style("fill", "red");'
   print("Interactive network setups are ready")
   return(list(links.d3=links.d3, nodes.d3=nodes.d3, ColourScale=ColourScale, myClick=myClick))
 }
-intSet <- interactiveSet()
-links.d3=intSet$links.d3
-nodes.d3=intSet$nodes.d3
-ColourScale=intSet$ColourScale
-myClick=intSet$myClick
 
 # [END]
