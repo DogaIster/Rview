@@ -16,22 +16,19 @@ library(rview)
 #You will be welcomed to rview.
 
 data_load()
-#The system will ask you to put the location of your data file for edges, this file should be in .csv
-#If you don't put the location and press enter, example data will be loaded for edges
-#Same question will be asked again for you to specify the location of your data file for nodes
-#Same process will follow
-
-#After your data or the example data is loaded (it will show the data), the system will load the plot and interactive network setups (You won't get any notification about this one, you can assume after your data is loaded the system is ready to draw)
-#Please check if igraph and networkD3 packages are checked out under packages.
-#After this step:
+#This is the function to load the data. You don't need to use it, example data will be automatically loaded.
 
 draw()
 #You will be asked specify the type of the visual representation you want to see. 
-#"p" will draw you a plot without labels, "p_wl" will draw you a plot with the labels, "i" will draw you an interactive network 
+#"p" will draw you a plot with labels, "l" will draw you a plot "just" with the labels, "i" will draw you an interactive network 
 #and "s" will draw you a sankey network.
 #If you put an invalid input it will warn you to put a valid one.
 
-# If you want to load a new dataset you need to use data_load().
+shinyApp(ui = ui, server = server)
+#This will allow you to see your interactive or sankey networks using Shiny. 
+#For interactive network you will be able to set the opacity from 0.1 to 1.
+#For sankey network you will be able to set if you want it to sink right or not.
+
 ````
 
 Data Template:
