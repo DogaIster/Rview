@@ -19,11 +19,10 @@
 #' @export
 #'
 
-
-#### Server ####
 library(shiny)
 library(networkD3)
 
+#### Server ####
 server <- function(input, output) {
 
   #Since Shiny uses networkD3 interactive setups are needed here as well.
@@ -76,5 +75,9 @@ ui <- shinyUI(fluidPage(
     )
   )
 ))
+
+useShiny <- function(){
+  shinyApp(ui = ui, server = server)
+}
 
 # [END]

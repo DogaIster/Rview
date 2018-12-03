@@ -25,7 +25,7 @@ draw()
 #to interactive network and sankey network.
 #If you put an invalid input it will warn you to put a valid one.
 
-shinyApp(ui = ui, server = server)
+useShiny()
 #This will allow you to see your interactive or sankey networks using Shiny. 
 #For interactive network you will be able to set the opacity from 0.1 to 1.
 #For sankey network you will be able to set if you want it to sink right or not.
