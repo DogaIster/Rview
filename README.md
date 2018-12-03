@@ -60,7 +60,7 @@ library(rview)
 
 ## Sample Results:
 
-Sample results can be found [here](https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ)
+Sample results can be found [here].(https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ)
 
 Some useful keyboard shortcuts for package authoring:
 
@@ -69,8 +69,7 @@ Some useful keyboard shortcuts for package authoring:
 * Test Package:              `Cmd + Shift + T`
 * Check Package:             `Cmd + Shift + E` or `devtools::check()`
 
-Load the package (outside of this project) with: <br>
-  devtools::install_github("DogaIster/Rview")
+
   
 
 
