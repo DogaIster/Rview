@@ -15,10 +15,12 @@
 #' User can use the function draw() and type 'shiny' \cr
 #' to answer the question to activate Shiny.
 #' Shiny is set to show only interactive and sankey networks.
-#'
-#' @export
+#'@return Shiny representation
+#'@usage useShiny()
+#'@export
 #'
 
+#### Required Packages ####
 library(shiny)
 library(networkD3)
 
