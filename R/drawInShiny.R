@@ -1,3 +1,25 @@
+# drawInShiny.R
+#
+# Purpose:To draw a visual representation in Shiny.
+# Version:1.0
+# Date:December 1st, 2018
+# Author:Doga Ister
+#
+# Dependencies: shiny, networkD3
+# ==============================================================================
+
+#' Shiny
+#'
+#' This function lets user work with Shiny.
+#' It can be called from draw.R.
+#' User can use the function draw() and type 'shiny' \cr
+#' to answer the question to activate Shiny.
+#' Shiny is set to show only interactive and sankey networks.
+#'
+#' @export
+#'
+
+
 #### Server ####
 library(shiny)
 library(networkD3)
@@ -37,7 +59,7 @@ server <- function(input, output) {
   })
 }
 
-#### UI ####
+#### Client ####
 
 ui <- shinyUI(fluidPage(
   sidebarLayout(

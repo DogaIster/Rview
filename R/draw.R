@@ -26,8 +26,8 @@ draw <- function(){
   ColourScale <- intSet$ColourScale
   myClick <- intSet$myClick
 
-  print("Available options: p for a plot with labels, l for a plot just with labels, i for an interactive network view, s for sankey network view")
-  answer <- readline(prompt = "Enter p to draw a plot, i to draw an interactive network and anything else but p and i for sankey networks: ")
+  print("Available options: p: plot, l: just labels, i: interactive network, s sankey network, shiny to use the Shiny library")
+  answer <- readline(prompt = "Enter p to draw a plot, i for interactive network, s for sankey network, l for 'just' labels or shiny to work on shiny: ")
   if (answer == "p") {
     print("Plot setups are ready")
     #draw a simple non-interactive plot
@@ -59,6 +59,8 @@ draw <- function(){
   } else if (answer == "s") {
     sankeyNetwork(Links = links.d3, Nodes = nodes.d3, Source = "from", Target = "to",
                   NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)" )
+  } else if(answer == "shiny") {
+    shinyApp(ui = ui, server = server)
   } else{
     print("Please choose a valid option")
     print("Valid options: 1) i 2) s 3) p 4) p_wl")
