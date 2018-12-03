@@ -9,14 +9,14 @@ Description: Rview is a generic interactive metabolic pathway viewer with a hove
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
     igraph,
     networkD3,
     shiny
 Suggests:
     testthat,
     shinytest,
-    RSelenium
+    knitr,
+    rmarkdown
 RoxygenNote: 6.1.0.9000
-
-    
+VignetteBuilder: knitr

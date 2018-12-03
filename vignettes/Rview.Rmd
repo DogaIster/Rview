@@ -1,6 +1,14 @@
-# rview
+---
+title: "Rview: for different visualizations in one package"
+author: "Doga Ister"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Rview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
-## Rview: for different visualizations in one package
 Rview is an R package that gives the user the ability to create different kinds of visualizations of a network without
 a need to use of different packages. 
 This package lets you draw a plot, a plot just with labels, an interactive network representation, and a Sankey network representation. The addition of the Shiny package also gives the user different kinds of abilities.
@@ -10,9 +18,6 @@ This package lets you draw a plot, a plot just with labels, an interactive netwo
     igraph
     networkD3
     
-## R Version:
-3.4.3
-
 ## Workflow Instructions:
 ````
 library(devtools)
@@ -47,8 +52,6 @@ name that you wanna see in the visual representation. node.type is as the name i
 as protein or reaction. Each node.type should have the same number for node.group. In the example data; proteins are one group
 and reactions are the other one.
 
-You can see example data under inst > extdata.
-
 ## Install
 
 ````
@@ -61,16 +64,3 @@ library(rview)
 ## Sample Results:
 
 Sample results can be found [here](https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ)
-
-Some useful keyboard shortcuts for package authoring:
-
-* Build and Reload Package:  `Cmd + Shift + B`
-* Update Documentation:      `Cmd + Shift + D` or `devtools::document()`
-* Test Package:              `Cmd + Shift + T`
-* Check Package:             `Cmd + Shift + E` or `devtools::check()`
-
-Load the package (outside of this project) with: <br>
-  devtools::install_github("DogaIster/Rview")
-  
-
-
