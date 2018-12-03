@@ -15,7 +15,8 @@ Imports:
     shiny
 Suggests:
     testthat,
-    lintr
+    shinytest,
+    RSelenium
 RoxygenNote: 6.1.0.9000
 
     

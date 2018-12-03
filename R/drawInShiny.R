@@ -63,6 +63,9 @@ server <- function(input, output) {
 #### Client ####
 
 ui <- shinyUI(fluidPage(
+
+  titlePanel("Shiny Representation "),
+
   sidebarLayout(
     sidebarPanel(
       numericInput("opacity", "Opacity", 0.6, min = 0.1, max = 1, step = .1)

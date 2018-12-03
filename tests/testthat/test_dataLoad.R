@@ -1,6 +1,6 @@
 #test dataLoad
 
-context("dataLoad")
+context("Testing dataLoad")
 
 intSet <- interactiveSet()
 links.d3 <- intSet$links.d3

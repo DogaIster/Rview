@@ -7,6 +7,9 @@
     igraph
     networkD3
     
+## R Version:
+3.4.3
+
 ## Workflow Instructions:
 ````
 library(devtools)

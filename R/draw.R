@@ -60,7 +60,7 @@ draw <- function(){
     sankeyNetwork(Links = links.d3, Nodes = nodes.d3, Source = "from", Target = "to",
                   NodeID = "name", Value = "value", fontSize = 16, unit = "Letter(s)" )
   } else if(answer == "shiny") {
-    shinyApp(ui = ui, server = server)
+    useShiny()
   } else{
     print("Please choose a valid option")
     print("Valid options: 1) i 2) s 3) p 4) p_wl")
