@@ -63,7 +63,7 @@ draw <- function(){
     useShiny()
   } else{
     print("Please choose a valid option")
-    print("Valid options: 1) i 2) s 3) p 4) p_wl")
+    print("Valid options: 1) i 2) s 3) p 4) l 5) shiny")
   }
 }
 
