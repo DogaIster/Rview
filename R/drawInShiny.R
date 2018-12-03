@@ -1,4 +1,7 @@
 #### Server ####
+library(shiny)
+library(networkD3)
+
 server <- function(input, output) {
 
   #Since Shiny uses networkD3 interactive setups are needed here as well.

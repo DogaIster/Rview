@@ -4,7 +4,7 @@
 \name{igraphLib}
 \alias{igraphLib}
 \title{plotSet}
-\format{An object of class \code{character} of length 8.}
+\format{An object of class \code{character} of length 10.}
 \usage{
 igraphLib
 }
