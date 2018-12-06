@@ -23,11 +23,12 @@ library(rview)
 #You will be welcomed to rview.
 
 data_load()
-#This is the function to load the data. You don't need to use it, example data will be automatically loaded.
+#Please only use this function if you replace example data files with your own files.
+#It will give you a preview of your data after usage.
 
 draw()
 #You will be asked to specify the type of the visual representation you want to use. 
-#"p" will draw you a plot with labels, "l" will draw you a plot "just" with the labels, "i" will draw you an interactive network 
+#"p" will draw you a plot with labels, "l" will draw you a plot "just" with the labels, "i" will draw you an forced interactive network 
 #and "s" will draw you a sankey network.If you write "shiny" it will direct you to use the Shiny library but this will be limited
 #to interactive network and sankey network.
 #If you put an invalid input it will warn you to put a valid one.
