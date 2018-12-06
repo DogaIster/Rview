@@ -61,7 +61,7 @@ library(rview)
 
 ## Sample Results:
 
-Sample results can be found [here].(https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ)
+Sample results can be found [here](https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ)
 
 Some useful keyboard shortcuts for package authoring:
 
