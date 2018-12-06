@@ -24,6 +24,8 @@ library(shiny)
 #' @usage
 #' useShiny()
 #'
+#' @importFrom shiny shinyApp
+#'
 #' @export
 useShiny <-
 function(){

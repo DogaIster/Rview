@@ -23,6 +23,12 @@ nodes <- data$nodes
 #' @usage
 #' draw()
 #'
+#' @importFrom networkD3 forceNetwork
+#' @importFrom networkD3 sankeyNetwork
+#' @importFrom networkD3 JS
+#' @importFrom networkD3 renderForceNetwork
+#' @importFrom networkD3 renderSankeyNetwork
+#'
 #' @export
 #'
 draw <-
@@ -42,17 +48,46 @@ function() {
   if (answer == "p") {
       print("Plot setups are ready")
       # draw a simple non-interactive plot
-      plot(networkPlot, edge.arrow.size = 0.4, edge.curved = 0.4, vertex.frame.color = "#ffffff")
+      plot(networkPlot,
+           edge.arrow.size = 0.4,
+           edge.curved = 0.4,
+           vertex.frame.color = "#ffffff")
   } else if (answer == "l") {
-      plot(networkPlot, vertex.shape = "none", vertex.label.font = 2, vertex.label.color = "black", vertex.label.cex = 0.8, edge.arrow.size = 0.3,
-          edge.curved = 0.2)
+      plot(networkPlot,
+           vertex.shape = "none",
+           vertex.label.font = 2,
+           vertex.label.color = "black",
+           vertex.label.cex = 0.8,
+           edge.arrow.size = 0.3,
+           edge.curved = 0.2)
   } else if (answer == "i") {
-      forceNetwork(Links = links.d3, Nodes = nodes.d3, Source = "from", Target = "to", Value = "value", NodeID = "name", Group = "node.type",
-          linkColour = "#afafaf", fontSize = 12, zoom = T, colourScale = JS(ColourScale), legend = T, opacity = 0.8, charge = -300, arrows = TRUE,
-          bounded = TRUE, opacityNoHover = 2, width = NULL, height = NULL, clickAction = myClick)
+      forceNetwork(Links = links.d3,
+                   Nodes = nodes.d3,
+                   Source = "from",
+                   Target = "to",
+                   Value = "value",
+                   NodeID = "name",
+                   Group = "node.type",
+                   linkColour = "#afafaf",
+                   fontSize = 12, zoom = T,
+                   colourScale = JS(ColourScale),
+                   legend = T,
+                   opacity = 0.8,
+                   charge = -300,
+                   arrows = TRUE,
+                   bounded = TRUE,
+                   opacityNoHover = 2,
+                   width = NULL,
+                   height = NULL,
+                   clickAction = myClick)
   } else if (answer == "s") {
-      sankeyNetwork(Links = links.d3, Nodes = nodes.d3, Source = "from", Target = "to", NodeID = "name", Value = "value", fontSize = 16,
-          unit = "Letter(s)")
+      sankeyNetwork(Links = links.d3,
+                    Nodes = nodes.d3,
+                    Source = "from",
+                    Target = "to",
+                    NodeID = "name",
+                    Value = "value",
+                    fontSize = 16)
   } else if (answer == "shiny") {
       useShiny()
   } else {
