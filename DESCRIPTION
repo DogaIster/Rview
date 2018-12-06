@@ -1,7 +1,7 @@
 Package: rview
 Type: Package
 Title: RView for visual representations
-Version: 0.1
+Version: 1.0
 Author: Doga Ister
 Maintainer: Doga Ister <doga.ister@mail.utoronto.ca>
 Description: Rview is a generic interactive metabolic pathway viewer with a hover over 
@@ -15,7 +15,6 @@ Imports:
     shiny
 Suggests:
     testthat,
-    shinytest,
     knitr,
     rmarkdown
 RoxygenNote: 6.1.0.9000

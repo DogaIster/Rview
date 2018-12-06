@@ -1,6 +1,6 @@
 #test_interactiveSet
 
-context("Testing interactive and sankey network setups")
+context("Testing interactive and Sankey network setups")
 
 intSet <- interactiveSet()
 links.d3.name <- intSet$links.d3$source

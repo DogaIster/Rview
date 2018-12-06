@@ -10,7 +10,7 @@ draw()
 the graph
 }
 \description{
-This function lets user decide what kind of visual representation
-they want to use, for now it is limited to
-plot, interactive networks and sankey network
+This function lets user decide what kind of visual representation \cr
+they want to use, for now it is limited to \cr
+plot, label plot, interactive and Sankey network and shiny representation.
 }

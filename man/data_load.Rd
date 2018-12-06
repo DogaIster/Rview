@@ -10,10 +10,6 @@ data_load()
 None
 }
 \description{
-This function asks user to specify the location of the data for edges and
-for nodes separately in their local computer and reads the specified CSV
-formatted data into R if user doesn't specify a location for the data,
-example data will be loaded.
-Please answer the questions with their full location like:
-"/Users/JaneDoe/Desktop/BCB410/Rview/inst/extdata/data_edges.csv"
+This function loads the example data.
+If user replaces example data with the desired data, it will load user's data.
 }

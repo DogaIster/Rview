@@ -9,10 +9,9 @@ interactiveSet()
 \arguments{
 \item{interactiveSet}{A function}
 }
-\description{
-This function sets the required D3 variables for the interactive network view
+\value{
+None
 }
-\keyword{D3}
-\keyword{interactive}
-\keyword{network}
-\keyword{networkD3}
+\description{
+This function sets the required D3 variables for the interactive network view.
+}

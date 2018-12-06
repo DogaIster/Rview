@@ -1,30 +1,18 @@
 # drawInShiny.R
-#
 # Purpose:To draw a visual representation in Shiny.
 # Version:1.0
 # Date:December 1st, 2018
 # Author:Doga Ister
 #
 # Dependencies: shiny, networkD3
+# Reference: https://github.com/christophergandrud/networkD3-shiny-example/blob/master/app.R
 # ==============================================================================
 
-#' Shiny
-#'
-#' This function lets user work with Shiny.
-#' It can be called from draw.R.
-#' User can use the function draw() and type 'shiny' \cr
-#' to answer the question to activate Shiny.
-#' Shiny is set to show only interactive and sankey networks.
-#'@return Shiny representation
-#'@usage useShiny()
-#'@export
-#'
-
-#### Required Packages ####
-library(shiny)
+# === Libraries that are used ===#
 library(networkD3)
+library(shiny)
 
-#### Server ####
+# === Server ===#
 server <- function(input, output) {
 
   #Since Shiny uses networkD3 interactive setups are needed here as well.
@@ -60,14 +48,14 @@ server <- function(input, output) {
   })
 }
 
-#### Client ####
+# === Client ===#
 
 ui <- shinyUI(fluidPage(
-
   titlePanel("Shiny Representation "),
-
   sidebarLayout(
     sidebarPanel(
+      #numericInput is used instead sliderInput in order to make this work
+      #with Sankey networks as well.
       numericInput("opacity", "Opacity", 0.6, min = 0.1, max = 1, step = .1)
     ),
     mainPanel(
@@ -80,9 +68,5 @@ ui <- shinyUI(fluidPage(
     )
   )
 ))
-
-useShiny <- function(){
-  shinyApp(ui = ui, server = server)
-}
 
 # [END]

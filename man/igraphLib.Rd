@@ -8,8 +8,10 @@
 \usage{
 igraphLib
 }
+\value{
+None
+}
 \description{
 This file sets the required variables for plot
 }
-\keyword{plot}
-\keyword{representation}
+\keyword{datasets}

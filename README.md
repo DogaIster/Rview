@@ -12,6 +12,7 @@ This package lets you draw a plot, a plot just with labels, an interactive netwo
     
 ## R Version:
 3.4.3
+('BiocManager' is not available for this version).
 
 ## Workflow Instructions:
 ````
