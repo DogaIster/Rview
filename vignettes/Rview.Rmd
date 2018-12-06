@@ -17,6 +17,7 @@ This package lets you draw a plot, a plot just with labels, an interactive netwo
  CRAN packages: 
     igraph
     networkD3
+    Shiny
     
 ## Workflow Instructions:
 ````
@@ -27,7 +28,8 @@ library(rview)
 #You will be welcomed to rview.
 
 data_load()
-#This is the function to load the data. You don't need to use it, example data will be automatically loaded.
+#Please only use this function if you replace example data files with your own files.
+#It will give you a preview of your data after usage.
 
 draw()
 #You will be asked to specify the type of the visual representation you want to use. 
@@ -63,4 +65,4 @@ library(rview)
 
 ## Sample Results:
 
-Sample results can be found [here](https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ)
+Sample results can be found [here](https://drive.google.com/open?id=1K4nGqFZjIM44eiYbvsXiRFzku7OLpRnZ).
