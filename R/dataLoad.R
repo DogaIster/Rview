@@ -1,6 +1,13 @@
-# data_load.R Purpose:To load the desired .csv data files Version:1.0 Date:October 25th, 2018 Author:Doga Ister Output: [1] 'Example
-# data for edges is loaded' [1] 'Example data for nodes is loaded' Dependencies:N/A
-# =========================================================================
+# data_load.R
+#Purpose:To load the desired .csv data files
+#Version:1.0
+#Date:October 25th, 2018
+#Author:Doga Ister
+#Output: [1] 'Data for edges is loaded'
+#        [1] 'Data for nodes is loaded'
+#
+#Dependencies:N/A
+# =============================================================================
 
 #' Load data
 #'

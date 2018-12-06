@@ -6,7 +6,7 @@
 #
 # Dependencies: shiny, networkD3
 # Reference: https://github.com/christophergandrud/networkD3-shiny-example/blob/master/app.R
-# ==============================================================================
+# =============================================================================
 
 # === Libraries that are used ===#
 library(networkD3)

@@ -1,11 +1,11 @@
-# useShiny.R
+#useShiny.R
 #Purpose:To draw a visual representation using SHiny
 #Version:1.0
 #Date:December 5th, 2018
 #Author:Doga Ister
 #
 #Dependencies: networkD3, Shiny
-# ==============================================================================
+# =============================================================================
 
 # === Libraries that are used ===#
 library(networkD3)

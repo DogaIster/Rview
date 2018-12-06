@@ -5,7 +5,7 @@
 #Author:Doga Ister
 #
 #Dependencies: igraph, networkD3
-# ==============================================================================
+# =============================================================================
 
 #Loading data as needed
 data <- data_load()
@@ -43,8 +43,13 @@ function() {
   myClick <- intSet$myClick
 
   # prompt user to let them choose the representation they want to use
-  print("Available options: p: plot, l: just labels, i: interactive network, s sankey network, shiny to use the Shiny library")
-  answer <- readline(prompt = "Enter p to draw a plot, i for interactive network, s for sankey network, l for 'just' labels or shiny to work on shiny: ")
+  cat("Available options:
+                          p: plot,
+                          l: just labels,
+                          i: interactive network,
+                          s: sankey network,
+                          shiny: to use the Shiny library")
+  answer <- readline(prompt = "Enter p to draw a plot, i for interactive network, s for sankey network, l for 'just' labels or shiny to work on shiny ")
   if (answer == "p") {
       print("Plot setups are ready")
       # draw a simple non-interactive plot
