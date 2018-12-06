@@ -9,6 +9,7 @@ This package lets you draw a plot, a plot just with labels, an interactive netwo
  CRAN packages: 
     igraph
     networkD3
+    Shiny
     
 ## R Version:
 3.4.3
